@@ -1,4 +1,5 @@
 var Fixture = require('./lib/Fixture'),
+    FixtureLoader = require('./lib/FixtureLoader'),
     ElementPool = require('./lib/ElementPool'),
     Fetcher = require('./lib/Fetcher'),
     q = require('q'),
@@ -70,3 +71,4 @@ FixtureCreator.prototype.createFixture = function(feedName, params) {
 };
 
 module.exports = FixtureCreator;
+module.exports.Loader = FixtureLoader;

@@ -56,6 +56,14 @@ module.exports = function (creator, fixtureName) {
 };
 ```
 
+# CLI
+
+To generate fixtures from a set of fixturator scripts as seen above you can use the fixturator cli:
+
+`fixturator <apiBaseUrL> <fixtureDir>`
+
+This will create a `cache` and `generated` directory inside the fixture directory to store the fixture data as well as a local cache for when the api is down.
+
 #API
 
 ## Fixture
@@ -207,3 +215,20 @@ var config = {
     })
 
 ```
+
+## Loader
+
+As fixtures are generated with all headers in tact they're not valid json, the fixturator loader allows you to load fixture files from a given directory:
+
+```javascript
+var fixtureLoader = require('fixturator').Loader(fixtureDir);
+var fixture = fixtureLoader.load('generated/cake');
+```
+
+It has a single method once instantiated:
+
+```javascript
+load(fixture)
+```
+
+Parses the `fixture` file into two properties, `json` with the fixture json and `status` which is the HTTP response code to use when mocking.

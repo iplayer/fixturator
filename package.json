@@ -15,7 +15,7 @@
     "q": "~1",
     "querystring": "0.2.0",
     "queue": "~3.0.10",
-    "request": "*",
+    "request": "2.81.0",
     "retry": "~0.6.1",
     "rimraf": "^2.4.4",
     "underscore": "*"
